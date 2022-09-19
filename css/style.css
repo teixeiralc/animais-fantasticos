@@ -231,13 +231,14 @@ body {
 
 /* JavaScript */
 
+/* Tab Menu */
 .js .js-tabcontent section {
   display: none;
 }
 
 .js-tabcontent section.active {
   display: block;
-  animation: showActive .5s forwards;
+  animation: showActive 0.5s forwards;
 }
 
 @keyframes showActive {
@@ -248,5 +249,40 @@ body {
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Accordion List */
+
+.js .js-accordionList dd {
+  display: none;
+}
+
+.js-accordionList dt {
+  cursor: pointer;
+}
+
+.js-accordionList dt::after {
+  content: "⬎";
+  margin-left: 10px;
+}
+
+.js-accordionList dt.active::after {
+  content: "⬏";
+}
+
+.js-accordionList dd.active {
+  display: block;
+  animation: slideDown .5s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 300px;
   }
 }
