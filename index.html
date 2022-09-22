@@ -20,7 +20,7 @@
 
 <body>
 
-  <nav class="menu js-menu">
+  <nav class="menu" data-menu="smooth">
     <ul>
       <li><a href="#animais">Animais</a></li>
       <li><a href="#faq">Faq</a></li>
@@ -29,9 +29,9 @@
     </ul>
   </nav>
 
-  <section class="grid-section animais js-scroll" id="animais">
+  <section class="grid-section animais" data-anime="scroll" id="animais">
     <h1 class="titulo">Animais Fantásticos</h1>
-    <ul class="animais-lista js-tabmenu">
+    <ul class="animais-lista" data-tab='menu'>
       <li>
         <img src="./img/imagem1.jpg" alt="Raposa">
       </li>
@@ -52,43 +52,43 @@
       </li>
     </ul>
 
-    <div class="animais-desc js-tabcontent">
-      <section>
+    <div class="animais-desc" data-tab="content">
+      <section data-anime="show-right">
         <h2>Raposa</h2>
         <p>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
         <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
         <p>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
       </section>
 
-      <section>
+      <section data-anime="show-down">
         <h2>Esquilo</h2>
         <p>Os esquilos pertencem a uma grande família de mamíferos roedores, de pequeno e médio porte, conhecida como Sciuridae. No Brasil, são também conhecidos como serelepe, caxinguelê, caxinxe, quatimirim, quatipuru, agutipuru ou acutipuru.</p>
         <p>As sementes são as principais fontes de alimentação, mas também consomem insetos e frutas. Quando coletam alimento, enterram algumas sementes que encontram, sendo que algumas chegam a germinar.</p>
         <p>Depois de 28 dias de gestação, nascem 4 ou 5 filhotes (no máximo 7) duas vezes por ano.</p>
       </section>
 
-      <section>
+      <section data-anime="show-right">
         <h2>Urso</h2>
         <p>Os Ursos constituem uma família de mamíferos plantígrados, geralmente de grande porte, contendo os ursos e os pandas.</p>
         <p>Algumas características comuns dos ursos são pelagem espessa, rabo curto, o olfato desenvolvido e as garras não retráteis. Os ursídeos são geralmente animais omnívoros, mas se alimentam principalmente de carne.</p>
         <p>A maioria dos ursos costumam preparar-se para hibernar durante o inverno, comendo grandes quantidades de comida antes de entrar em uma toca para o período de sono profundo.</p>
       </section>
 
-      <section>
+      <section data-anime="show-down">
         <h2>Lobo</h2>
         <p>O lobo é uma espécie de mamífero canídeo do gênero Canis. É um sobrevivente da Era do Gelo, originário do Pleistoceno Superior, cerca de 300 mil anos atrás.</p>
         <p>O peso e tamanho dos lobos variam muito em todo o mundo, tendendo a aumentar proporcionalmente com a latitude. Em geral, a altura, medida a partir dos ombros, varia de 60 a 95 centímetros.</p>
         <p>Os lobos têm pelos volumosos repartidos em duas camadas. A primeira camada é constituída por pelos resistentes que repelem água e sujeira. A segunda camada forma uma pelagem densa, isolante à água.</p>
       </section>
 
-      <section>
+      <section data-anime="show-right">
         <h2>Macaco</h2>
         <p>Macaco é um termo de origem africana utilizado como designação comum a todas as espécies de símios ou primatas antropoides.</p>
         <p>Os macacos variam em tamanho, podendo ser tão pequeno quanto 117 mm e pesando pouco mais de 100 g, como também pode medir 1 m e pesar até 36kg.</p>
         <p>Alguns são arbóreos (vivendo em árvores), enquanto outros vivem na savana ; as dietas diferem entre as várias espécies, mas podem conter qualquer um dos seguintes alimentos: frutas, folhas, sementes, nozes, flores, ovos e pequenos animais.</p>
       </section>
 
-      <section>
+      <section data-anime="show-down">
         <h2>Leão</h2>
         <p>O leão é uma espécie de mamífero carnívoro do gênero Panthera e da família Felidae. A espécie é atualmente encontrada na África subsaariana e na Ásia.</p>
         <p>Considerados como os Reis da Selva, possuem pelagem unicolor de coloração castanha, e os machos apresentam uma juba característica.</p>
@@ -97,10 +97,10 @@
     </div>
   </section>
 
-  <section class="grid-section faq js-scroll" id="faq">
+  <section class="grid-section faq" data-anime="scroll" id="faq">
     <h1 class="titulo">FAQ</h1>
 
-    <dl class="faq-lista js-accordionList">
+    <dl class="faq-lista" data-anime="accordion">
       <dt>Qual a idade dos animais?</dt>
       <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, et impedit a culpa corporis asperiores aliquam. Exercitationem accusamus mollitia repellat unde reiciendis repudiandae facere maiores.</dd>
 
@@ -115,7 +115,7 @@
     </dl>
   </section>
 
-  <section class="grid-section contato js-scroll" id="contato">
+  <section class="grid-section contato" data-anime="scroll" id="contato">
     <h1 class="titulo">Contato</h1>
     <div class="mapa">
       <img src="./img/mapa.png" alt="Mapa">

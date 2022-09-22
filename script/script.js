@@ -1,8 +1,8 @@
 // Tab Menu
 
 function initTabMenuNav() {
-  const tabMenu = document.querySelectorAll(".js-tabmenu li");
-  const tabContent = document.querySelectorAll(".js-tabcontent section");
+  const tabMenu = document.querySelectorAll("[data-tab='menu'] li");
+  const tabContent = document.querySelectorAll("[data-tab='content'] section");
   const activeClass = "active";
 
   if (tabMenu.length && tabContent.length) {
@@ -11,10 +11,11 @@ function initTabMenuNav() {
     function activeTab(i) {
       // i = index
       tabContent.forEach((content) => {
-        content.classList.remove(activeClass);
+        content.classList.remove(activeClass, tabContent[i].dataset.anime);
       });
 
-      tabContent[i].classList.add(activeClass);
+      const animeClass = tabContent[i].dataset.anime;
+      tabContent[i].classList.add(activeClass, animeClass);
     }
 
     tabMenu.forEach((item, i) => {
@@ -30,7 +31,9 @@ initTabMenuNav();
 // Accordion List
 
 function initAccordion() {
-  const accordionList = document.querySelectorAll(".js-accordionList dt");
+  const accordionList = document.querySelectorAll(
+    "[data-anime='accordion'] dt"
+  );
   const activeClass = "active";
 
   if (accordionList.length) {
@@ -53,7 +56,9 @@ initAccordion();
 // Smooth Scroll
 
 function initSmoothScroll() {
-  const internalLinks = document.querySelectorAll('.js-menu a[href^="#"]');
+  const internalLinks = document.querySelectorAll(
+    '[data-menu="smooth"] a[href^="#"]'
+  );
 
   function scrollToSection(event) {
     event.preventDefault();
@@ -76,7 +81,7 @@ initSmoothScroll();
 // Animation at scroll
 
 function initAnimationOnScroll() {
-  const sections = document.querySelectorAll(".js-scroll");
+  const sections = document.querySelectorAll("[data-anime='scroll']");
 
   if (sections.length) {
     const windowHeightHalf = window.innerHeight * 0.6;
@@ -98,3 +103,19 @@ function initAnimationOnScroll() {
 }
 
 initAnimationOnScroll();
+
+// Dataset
+
+// Adicione um atributo data-anime="show-down" e
+// data-anime="show-right" a todos as section's
+// com descricão dos animais.
+
+// Utilizando estes atributos, adicione a classe
+// show-down ou show-right a sua respectiva section
+// assim que a mesma aparecer na tela (animacao tab)
+
+// No CSS faça com que show-down anime de cima para baixo
+// e show-right continue com a mesma animação da esquerda
+// para a direita
+
+// Substitua todas as classes js- por data atributes.
