@@ -22,8 +22,18 @@
 
   <div class="grid-container">
     <nav class="menu" data-menu="smooth">
-      <ul>
+      <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul data-menu="list" id="menu">
         <li><a href="#animais">Animais</a></li>
+        <li data-dropdown>
+          <a href="./sobre.html">Sobre</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Empresa</a></li>
+            <li><a href="#">Equipe</a></li>
+            <li><a href="#">Sócios</a></li>
+            <li><a href="#">Investidores</a></li>
+          </ul>
+        </li>
         <li><a href="#faq">Faq</a></li>
         <li><a href="#contato">Contato</a></li>
         <li><a data-modal="open" href="./login.html" target="_blank">Login ►</a></li>
@@ -115,6 +125,28 @@
         <dt>Como proteger?</dt>
         <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur velit soluta repudiandae quasi eius illum!</dd>
       </dl>
+    </section>
+
+    <section class="grid-section numbers" data-anime="scroll">
+      <h1 class="titulo">Números</h1>
+      <div class="grid-numbers">
+        <div class="animal-number">
+          <h3>Lobos</h3>
+          <span data-number>3152</span>
+        </div>
+        <div class="animal-number">
+          <h3>Raposas</h3>
+          <span data-number>6581</span>
+        </div>
+        <div class="animal-number">
+          <h3>Esquilos</h3>
+          <span data-number>8976</span>
+        </div>
+        <div class="animal-number">
+          <h3>Ursos</h3>
+          <span data-number>2145</span>
+        </div>
+      </div>
     </section>
 
     <section class="grid-section contato" data-anime="scroll" id="contato">
