@@ -6,7 +6,9 @@ import initModal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
 import initDropdownMenu from "./modules/dropdown-menu.js";
 import initMobileMenu from "./modules/mobile-menu.js";
-import initAnimateNumbers from "./modules/numbers-animate.js";
+import initOpeningHours from "./modules/opening-hours.js";
+import initAnimalsApi from "./modules/fetch-animais.js";
+import initBitcoinApi from "./modules/fetch-btc.js";
 
 initSmoothScroll();
 initAnimationOnScroll();
@@ -16,4 +18,6 @@ initModal();
 initTooltip();
 initDropdownMenu();
 initMobileMenu();
-initAnimateNumbers();
+initOpeningHours();
+initAnimalsApi();
+initBitcoinApi();
