@@ -8,7 +8,7 @@ export default function initAnimateNumbers() {
 
       let start = 0;
       const timer = setInterval(() => {
-        start = start + increment;
+        start += increment;
         n.innerText = start;
         if (start > total) {
           clearInterval(timer);
@@ -18,15 +18,16 @@ export default function initAnimateNumbers() {
     });
   }
 
+  let observer;
   function handleMutation(mutation) {
     if (mutation[0].target.classList.contains("animate")) {
       observer.disconnect();
       animateNumbers();
     }
   }
-
+  
+  observer = new MutationObserver(handleMutation);
   const observerTarget = document.querySelector(".numbers");
-  const observer = new MutationObserver(handleMutation);
 
   observer.observe(observerTarget, { attributes: true });
 }
