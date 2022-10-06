@@ -1,6 +1,6 @@
 import SmoothScroll from './modules/smooth-scroll.js';
 import initAnimationOnScroll from './modules/animation-at-scroll.js';
-import initAccordion from './modules/accordion-list.js';
+import Accordion from './modules/accordion-list.js';
 import initTabMenuNav from './modules/tabNav.js';
 import initModal from './modules/modal.js';
 import initTooltip from './modules/tooltip.js';
@@ -13,8 +13,10 @@ import initBitcoinApi from './modules/fetch-btc.js';
 const smoothScroll = new SmoothScroll('[data-menu="smootha"] a[href^="#"');
 smoothScroll.init();
 
+const accordion = new Accordion("[data-anime='accordion'] dt");
+accordion.init();
+
 initAnimationOnScroll();
-initAccordion();
 initTabMenuNav();
 initModal();
 initTooltip();
