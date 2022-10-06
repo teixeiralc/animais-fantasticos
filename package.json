@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack --mode development --watch"
+    "dev": "webpack --mode development --watch",
+    "cssbuild": "cleancss -o ./css/style.min.css ./css/style.css"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "@babel/plugin-transform-runtime": "^7.19.1",
     "@babel/preset-env": "^7.19.3",
     "babel-loader": "^8.2.5",
+    "clean-css": "^5.3.1",
     "eslint": "^8.24.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
