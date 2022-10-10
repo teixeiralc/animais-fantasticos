@@ -34,7 +34,7 @@ const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
 initAnimalsApi('../../animals.json', '.grid-numbers');
-initBitcoinApi();
+initBitcoinApi('https://blockchain.info/ticker', '.btc-preco');
 initDropdownMenu();
 initMobileMenu();
 initOpeningHours();
