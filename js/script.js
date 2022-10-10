@@ -6,7 +6,7 @@ import Tooltip from './modules/tooltip.js';
 import initDropdownMenu from './modules/dropdown-menu.js';
 import initMobileMenu from './modules/mobile-menu.js';
 import initOpeningHours from './modules/opening-hours.js';
-import initAnimalsApi from './modules/fetch-animais.js';
+import initAnimalsApi from './modules/fetch-animals.js';
 import initBitcoinApi from './modules/fetch-btc.js';
 import initAnimationOnScroll from './modules/animation-at-scroll.js';
 
@@ -33,9 +33,9 @@ modal.init();
 const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
+initAnimalsApi('../../animals.json', '.grid-numbers');
+initBitcoinApi();
 initDropdownMenu();
 initMobileMenu();
 initOpeningHours();
-initAnimalsApi();
-initBitcoinApi();
 initAnimationOnScroll();
