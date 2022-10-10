@@ -29,5 +29,6 @@ export default class TabNavMenu {
       this.activeTab(0);
       this.addEvent();
     }
+    return this;
   }
 }
