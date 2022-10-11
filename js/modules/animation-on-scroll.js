@@ -3,23 +3,43 @@ export default class AnimationOnScroll {
     this.sections = document.querySelectorAll(sections);
     this.windowHeightHalf = window.innerHeight * 0.6;
 
-    this.scrollAnimation = this.scrollAnimation.bind(this);
+    this.checkDistance = this.checkDistance.bind(this);
   }
 
-  scrollAnimation() {
-    this.sections.forEach((section) => {
-      const sectionTop = section.getBoundingClientRect().top;
-      const isSectionVisible = sectionTop - this.windowHeightHalf < 0;
-      if (isSectionVisible) {
-        section.classList.add('animate');
-      } else if (section.classList.contains('animate')) {
-        section.classList.remove('animate');
+  // Gets the distance of each item in relation
+  // to the top of the page
+  getDistance() {
+    this.distance = [...this.sections].map((section) => {
+      const offset = section.offsetTop;
+      return {
+        element: section,
+        offset: Math.floor(offset - this.windowHeightHalf),
+      };
+    });
+  }
+
+  // Checks the distance of each section
+  // in relation to the scroll
+  checkDistance() {
+    this.distance.forEach((item) => {
+      if (window.pageYOffset > item.offset) {
+        item.element.classList.add('animate');
+      } else if (item.element.classList.contains('animate')) {
+        item.element.classList.remove('animate');
       }
     });
   }
 
   init() {
-    this.scrollAnimation();
-    window.addEventListener('scroll', this.scrollAnimation);
+    if (this.sections.length) {
+      this.getDistance();
+      this.checkDistance();
+      window.addEventListener('scroll', this.checkDistance);
+    }
+    return this;
+  }
+
+  stop() {
+    window.removeEventListener('scroll', this.checkDistance);
   }
 }
