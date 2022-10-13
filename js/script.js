@@ -48,5 +48,5 @@ const openingHours = new OpeningHours('[data-week]', 'open', 'closed');
 openingHours.init();
 
 // Fetch Functions (URL, target)
-initAnimalsApi('../animals.json', '.grid-numbers');
+initAnimalsApi('./animals.json', '.grid-numbers');
 initBitcoinApi('https://blockchain.info/ticker', '.btc-preco');
