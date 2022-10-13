@@ -1,18 +1,37 @@
-import outsideClick from "./outside-click.js";
+import outsideClick from './outside-click.js';
 
-export default function initDropdownMenu() {
-  const dropdownMenus = document.querySelectorAll("[data-dropdown]");
+export default class DropdownMenu {
+  constructor(dropdownMenus, userEvents) {
+    this.dropdownMenus = document.querySelectorAll(dropdownMenus);
+    this.activeClass = 'active';
 
-  function handleClick(event) {
+    // 'touchstart' and 'click' are set as default 
+    // if no userEvents are given
+    if (userEvents === undefined) this.userEvents = ['touchstart', 'click'];
+    else this.userEvents = userEvents;
+
+    this.activateDropdownMenu = this.activateDropdownMenu.bind(this);
+  }
+
+  activateDropdownMenu(event) {
+    const element = event.currentTarget;
     event.preventDefault();
-    this.classList.add("active");
-    outsideClick(this, ["touchstart", "click"], () =>
-      this.classList.remove("active")
+    element.classList.add(this.activeClass);
+    outsideClick(element, this.userEvents, () =>
+      element.classList.remove('active')
     );
   }
-  dropdownMenus.forEach((menu) => {
-    ["touchstart", "click"].forEach((userEvent) => {
-      menu.addEventListener(userEvent, handleClick);
+
+  addEvent() {
+    this.dropdownMenus.forEach((menu) => {
+      this.userEvents.forEach((userEvent) => {
+        menu.addEventListener(userEvent, this.activateDropdownMenu);
+      });
     });
-  });
+  }
+
+  init() {
+    if (this.dropdownMenus.length) this.addEvent();
+    return this;
+  }
 }
