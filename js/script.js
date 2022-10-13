@@ -4,11 +4,11 @@ import TabNavMenu from './modules/tabNav.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import DropdownMenu from './modules/dropdown-menu.js';
-import initMobileMenu from './modules/mobile-menu.js';
+import MobileMenu from './modules/mobile-menu.js';
+import AnimationOnScroll from './modules/animation-on-scroll.js';
 import initOpeningHours from './modules/opening-hours.js';
 import initAnimalsApi from './modules/fetch-animals.js';
 import initBitcoinApi from './modules/fetch-btc.js';
-import AnimationOnScroll from './modules/animation-on-scroll.js';
 
 const smoothScroll = new SmoothScroll('[data-menu="smooth"] a[href^="#"');
 smoothScroll.init();
@@ -39,7 +39,9 @@ animationOnScroll.init();
 const dropdownMenu = new DropdownMenu('[data-dropdown]');
 dropdownMenu.init();
 
-initMobileMenu();
+const mobileMenu = new MobileMenu('[data-menu="button"]', '[data-menu="list"]');
+mobileMenu.init();
+
 initOpeningHours();
 
 initAnimalsApi('../../animals.json', '.grid-numbers');
