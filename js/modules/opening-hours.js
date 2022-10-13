@@ -1,18 +1,43 @@
-export default function initOpeningHours() {
-  // Get datasets into arrays
-  const functioning = document.querySelector("[data-week]");
-  const workHours = functioning.dataset.hours.split(",").map(Number);
-  const weekDays = functioning.dataset.week.split(",").map(Number);
+export default class OpeningHours {
+  constructor(functioning, activeClass, inactiveClass) {
+    this.functioning = document.querySelector(functioning);
+    this.activeClass = activeClass;
+    this.inactiveClass = inactiveClass;
+  }
 
-  // Get current date and time
-  const dateNow = new Date();
-  const curWeekDay = dateNow.getDay();
-  const curHour = dateNow.getUTCHours() - 3;
+  functioningDate() {
+    // Get datasets into arrays
+    this.workHours = this.functioning.dataset.hours.split(',').map(Number);
+    this.weekDays = this.functioning.dataset.week.split(',').map(Number);
+  }
 
-  // Verify if current date matches the opening hours.
-  const weekOpen = weekDays.indexOf(curWeekDay) !== -1;
-  const openingHours = curHour >= workHours[0] && curHour < workHours[1];
+  curDate() {
+    // Get current date and time
+    this.dateNow = new Date();
+    this.curWeekDay = this.dateNow.getDay();
+    this.curHour = this.dateNow.getUTCHours() - 3;
+  }
 
-  if (weekOpen && openingHours) functioning.classList.add("open");
-  else functioning.classList.add("closed");
+  verifyDate() {
+    // Verify if current date matches the opening hours.
+    const weekOpen = this.weekDays.indexOf(this.curWeekDay) !== -1;
+    const openingHours =
+      this.curHour >= this.workHours[0] && this.curHour < this.workHours[1];
+
+    return weekOpen && openingHours;
+  }
+
+  isOpen() {
+    if (this.verifyDate()) this.functioning.classList.add(this.activeClass);
+    else this.functioning.classList.add(this.inactiveClass);
+  }
+
+  init() {
+    if (this.functioning) {
+      this.functioningDate();
+      this.curDate();
+      this.isOpen();
+    }
+    return this;
+  }
 }

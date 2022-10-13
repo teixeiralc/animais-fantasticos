@@ -6,7 +6,9 @@ import Tooltip from './modules/tooltip.js';
 import DropdownMenu from './modules/dropdown-menu.js';
 import MobileMenu from './modules/mobile-menu.js';
 import AnimationOnScroll from './modules/animation-on-scroll.js';
-import initOpeningHours from './modules/opening-hours.js';
+import OpeningHours from './modules/opening-hours.js';
+
+// Fetch Functions
 import initAnimalsApi from './modules/fetch-animals.js';
 import initBitcoinApi from './modules/fetch-btc.js';
 
@@ -42,7 +44,9 @@ dropdownMenu.init();
 const mobileMenu = new MobileMenu('[data-menu="button"]', '[data-menu="list"]');
 mobileMenu.init();
 
-initOpeningHours();
+const openingHours = new OpeningHours('[data-week]', 'open', 'closed');
+openingHours.init();
 
+// Fetch Functions (URL, target)
 initAnimalsApi('../../animals.json', '.grid-numbers');
 initBitcoinApi('https://blockchain.info/ticker', '.btc-preco');
