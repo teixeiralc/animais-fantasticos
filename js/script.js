@@ -7,6 +7,7 @@ import DropdownMenu from './modules/dropdown-menu.js';
 import MobileMenu from './modules/mobile-menu.js';
 import AnimationOnScroll from './modules/animation-on-scroll.js';
 import OpeningHours from './modules/opening-hours.js';
+import SlideNav from './modules/slide.js';
 
 // Fetch Functions
 import initAnimalsApi from './modules/fetch-animals.js';
@@ -46,6 +47,10 @@ mobileMenu.init();
 
 const openingHours = new OpeningHours('[data-week]', 'open', 'closed');
 openingHours.init();
+
+const slide = new SlideNav('.slide', '.wrapper');
+slide.init();
+slide.addControl('.customControl');
 
 // Fetch Functions (URL, target)
 initAnimalsApi('./animals.json', '.grid-numbers');
