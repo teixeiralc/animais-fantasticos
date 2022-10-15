@@ -57,7 +57,7 @@ body {
   display: block;
   padding: 10px;
   color: #222;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 0.875rem;
@@ -65,7 +65,7 @@ body {
 }
 
 .menu a::after {
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   width: 0;
@@ -88,7 +88,7 @@ body {
 }
 
 .titulo {
-  font-family: "Playfair Display SC", Georgia, serif;
+  font-family: 'Playfair Display SC', Georgia, serif;
   font-size: 6rem;
   line-height: 1;
   font-weight: 400;
@@ -97,7 +97,7 @@ body {
 }
 
 .animais h2 {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -106,7 +106,7 @@ body {
 }
 
 .animais h2::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 40px;
   height: 10px;
@@ -156,7 +156,7 @@ body {
 }
 
 .faq-lista dt {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 700;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
@@ -164,7 +164,7 @@ body {
 }
 
 .faq-lista dt::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 20px;
   height: 10px;
@@ -192,7 +192,7 @@ body {
 }
 
 .dados li::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 20px;
   height: 10px;
@@ -208,7 +208,7 @@ body {
 
 .copyright p {
   padding: 20px;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 700;
   font-size: 1rem;
 }
@@ -248,19 +248,19 @@ body {
 /* JavaScript */
 
 /* Tab Menu */
-.js [data-tab="content"] section {
+.js [data-tab='content'] section {
   display: none;
 }
 
-[data-tab="content"] section.active {
+[data-tab='content'] section.active {
   display: block !important;
 }
 
-[data-tab="content"] section.active.show-right {
+[data-tab='content'] section.active.show-right {
   animation: showRight 0.5s forwards;
 }
 
-[data-tab="content"] section.active.show-down {
+[data-tab='content'] section.active.show-down {
   animation: showDown 0.5s forwards;
 }
 
@@ -288,24 +288,30 @@ body {
 
 /* Accordion List */
 
-.js [data-anime="accordion"] dd {
+.js [data-anime='accordion'] dd {
   display: none;
 }
 
-[data-anime="accordion"] dt {
+[data-anime='accordion'] dt {
   cursor: pointer;
 }
 
-[data-anime="accordion"] dt::after {
-  content: "⬎";
+[data-anime='accordion'] dt::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: url('../img/arrow-red.svg') no-repeat center center;
   margin-left: 10px;
+  transform: rotate(90deg);
+  transition: transform .3s;
 }
 
-[data-anime="accordion"] dt.active::after {
-  content: "⬏";
+[data-anime='accordion'] dt.active::after {
+  transform: rotate(-90deg);
 }
 
-[data-anime="accordion"] dd.active {
+[data-anime='accordion'] dd.active {
   display: block;
   animation: slideDown 0.5s forwards;
 }
@@ -323,13 +329,13 @@ body {
 
 /* Scroll Animation */
 
-.js [data-anime="scroll"] {
+.js [data-anime='scroll'] {
   opacity: 0;
   transform: translate3d(-30px, 0, 0);
   transition: 0.3s;
 }
 
-.js [data-anime="scroll"].animate {
+.js [data-anime='scroll'].animate {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
@@ -337,7 +343,7 @@ body {
 /* Opening Hours */
 
 [data-week]::after {
-  content: "";
+  content: '';
   display: inline-block;
   width: 6px;
   height: 6px;
@@ -356,7 +362,16 @@ body {
 
 .btc-preco {
   background: #3f4;
-  padding: .2rem .5rem;
+  padding: 0.2rem 0.5rem;
   font-weight: 700;
   border-radius: 2px;
+}
+
+/* SVG Arrows */
+
+.arrow-black {
+  background: url('../img/arrow-black.svg') no-repeat center center;
+  display: inline-block;
+  width: 8px;
+  height: 10px;
 }
